@@ -1,0 +1,120 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A64E80DD-4A77-46B6-A813-6F230734878A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Popups\PopupExample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Markers\Markers.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MeasureDistanceDb\MeasureDistanceDb.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GPXDisplay\GPXDisplay.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DrawGPX\DrawGPX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DirectionsEx\DirectionsEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BikeTourPlanner\Server\BikeTourServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BikeTourPlanner\Client\TourWeb.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PopupExample">
+        <MSBuild Projects="Popups\PopupExample.dproj"/>
+    </Target>
+    <Target Name="PopupExample:Clean">
+        <MSBuild Projects="Popups\PopupExample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PopupExample:Make">
+        <MSBuild Projects="Popups\PopupExample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Markers">
+        <MSBuild Projects="Markers\Markers.dproj"/>
+    </Target>
+    <Target Name="Markers:Clean">
+        <MSBuild Projects="Markers\Markers.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Markers:Make">
+        <MSBuild Projects="Markers\Markers.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MeasureDistanceDb">
+        <MSBuild Projects="MeasureDistanceDb\MeasureDistanceDb.dproj"/>
+    </Target>
+    <Target Name="MeasureDistanceDb:Clean">
+        <MSBuild Projects="MeasureDistanceDb\MeasureDistanceDb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MeasureDistanceDb:Make">
+        <MSBuild Projects="MeasureDistanceDb\MeasureDistanceDb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GPXDisplay">
+        <MSBuild Projects="GPXDisplay\GPXDisplay.dproj"/>
+    </Target>
+    <Target Name="GPXDisplay:Clean">
+        <MSBuild Projects="GPXDisplay\GPXDisplay.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GPXDisplay:Make">
+        <MSBuild Projects="GPXDisplay\GPXDisplay.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DrawGPX">
+        <MSBuild Projects="DrawGPX\DrawGPX.dproj"/>
+    </Target>
+    <Target Name="DrawGPX:Clean">
+        <MSBuild Projects="DrawGPX\DrawGPX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DrawGPX:Make">
+        <MSBuild Projects="DrawGPX\DrawGPX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DirectionsEx">
+        <MSBuild Projects="DirectionsEx\DirectionsEx.dproj"/>
+    </Target>
+    <Target Name="DirectionsEx:Clean">
+        <MSBuild Projects="DirectionsEx\DirectionsEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DirectionsEx:Make">
+        <MSBuild Projects="DirectionsEx\DirectionsEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BikeTourServer">
+        <MSBuild Projects="BikeTourPlanner\Server\BikeTourServer.dproj"/>
+    </Target>
+    <Target Name="BikeTourServer:Clean">
+        <MSBuild Projects="BikeTourPlanner\Server\BikeTourServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BikeTourServer:Make">
+        <MSBuild Projects="BikeTourPlanner\Server\BikeTourServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TourWeb">
+        <MSBuild Projects="BikeTourPlanner\Client\TourWeb.dproj"/>
+    </Target>
+    <Target Name="TourWeb:Clean">
+        <MSBuild Projects="BikeTourPlanner\Client\TourWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TourWeb:Make">
+        <MSBuild Projects="BikeTourPlanner\Client\TourWeb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PopupExample;Markers;MeasureDistanceDb;GPXDisplay;DrawGPX;DirectionsEx;BikeTourServer;TourWeb"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PopupExample:Clean;Markers:Clean;MeasureDistanceDb:Clean;GPXDisplay:Clean;DrawGPX:Clean;DirectionsEx:Clean;BikeTourServer:Clean;TourWeb:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PopupExample:Make;Markers:Make;MeasureDistanceDb:Make;GPXDisplay:Make;DrawGPX:Make;DirectionsEx:Make;BikeTourServer:Make;TourWeb:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

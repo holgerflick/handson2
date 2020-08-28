@@ -1,0 +1,133 @@
+object FrmMain: TFrmMain
+  Left = 0
+  Top = 0
+  ActiveControl = Map
+  Caption = 
+    'Browse accidents in the US since 2/8/2016  (https://www.kaggle.c' +
+    'om/sobhanmoosavi/us-accidents)'
+  ClientHeight = 538
+  ClientWidth = 712
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Droid Sans Mono'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 712
+    Height = 59
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 0
+    object cbStates: TDBLookupComboBox
+      Left = 8
+      Top = 8
+      Width = 249
+      Height = 27
+      KeyField = 'Code'
+      ListField = 'State'
+      ListSource = dsStates
+      TabOrder = 0
+    end
+    object dpDate: TAdvDateTimePicker
+      Left = 263
+      Top = 8
+      Width = 169
+      Height = 27
+      Date = 44035.000000000000000000
+      Format = ''
+      Time = 0.732152777774899700
+      DoubleBuffered = True
+      Kind = dkDate
+      ParentDoubleBuffered = False
+      TabOrder = 1
+      BorderStyle = bsSingle
+      Ctl3D = True
+      DateTime = 44035.732152777770000000
+      Version = '1.3.5.4'
+      LabelFont.Charset = DEFAULT_CHARSET
+      LabelFont.Color = clWindowText
+      LabelFont.Height = -11
+      LabelFont.Name = 'Tahoma'
+      LabelFont.Style = []
+    end
+    object btnQuery: TAdvGlowButton
+      Left = 438
+      Top = 8
+      Width = 154
+      Height = 27
+      Caption = 'Show incidents'
+      NotesFont.Charset = DEFAULT_CHARSET
+      NotesFont.Color = clWindowText
+      NotesFont.Height = -11
+      NotesFont.Name = 'Tahoma'
+      NotesFont.Style = []
+      Rounded = True
+      TabOrder = 2
+      OnClick = btnQueryClick
+      Appearance.BorderColor = 11382963
+      Appearance.BorderColorHot = 11565130
+      Appearance.BorderColorCheckedHot = 11565130
+      Appearance.BorderColorDown = 11565130
+      Appearance.BorderColorChecked = 13744549
+      Appearance.BorderColorDisabled = 13948116
+      Appearance.ColorChecked = 13744549
+      Appearance.ColorCheckedTo = 13744549
+      Appearance.ColorDisabled = clWhite
+      Appearance.ColorDisabledTo = clNone
+      Appearance.ColorDown = 11565130
+      Appearance.ColorDownTo = 11565130
+      Appearance.ColorHot = 16444643
+      Appearance.ColorHotTo = 16444643
+      Appearance.ColorMirror = clWhite
+      Appearance.ColorMirrorTo = clWhite
+      Appearance.ColorMirrorHot = 16444643
+      Appearance.ColorMirrorHotTo = 16444643
+      Appearance.ColorMirrorDown = 11565130
+      Appearance.ColorMirrorDownTo = 11565130
+      Appearance.ColorMirrorChecked = 13744549
+      Appearance.ColorMirrorCheckedTo = 13744549
+      Appearance.ColorMirrorDisabled = clWhite
+      Appearance.ColorMirrorDisabledTo = clNone
+      Appearance.GradientHot = ggVertical
+      Appearance.GradientMirrorHot = ggVertical
+      Appearance.GradientDown = ggVertical
+      Appearance.GradientMirrorDown = ggVertical
+      Appearance.GradientChecked = ggVertical
+      Appearance.TextColorChecked = 3750459
+      Appearance.TextColorDown = 2303013
+      Appearance.TextColorHot = 2303013
+      Appearance.TextColorDisabled = 13948116
+    end
+  end
+  object Map: TTMSFNCGoogleMaps
+    Left = 0
+    Top = 59
+    Width = 712
+    Height = 479
+    Align = alClient
+    ParentDoubleBuffered = False
+    DoubleBuffered = True
+    TabOrder = 1
+    Polylines = <>
+    Polygons = <>
+    Circles = <>
+    Rectangles = <>
+    Markers = <>
+    Options.DefaultLatitude = 40.689247000000000000
+    Options.DefaultLongitude = -74.044501999999990000
+    KMLLayers = <>
+    Clusters = <>
+  end
+  object dsStates: TDataSource
+    DataSet = DBController.QuStates
+    Left = 200
+    Top = 24
+  end
+end

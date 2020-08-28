@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{433D9F1C-95C1-4195-B3F9-2A7FF6C413DB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="BikeTourServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Client\TourWeb.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="BikeTourServer">
+        <MSBuild Projects="BikeTourServer.dproj"/>
+    </Target>
+    <Target Name="BikeTourServer:Clean">
+        <MSBuild Projects="BikeTourServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BikeTourServer:Make">
+        <MSBuild Projects="BikeTourServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TourWeb">
+        <MSBuild Projects="..\Client\TourWeb.dproj"/>
+    </Target>
+    <Target Name="TourWeb:Clean">
+        <MSBuild Projects="..\Client\TourWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TourWeb:Make">
+        <MSBuild Projects="..\Client\TourWeb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="BikeTourServer;TourWeb"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="BikeTourServer:Clean;TourWeb:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="BikeTourServer:Make;TourWeb:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

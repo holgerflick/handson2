@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{47309B2C-CBFC-406A-8622-9879C6659366}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="LocationGoogle\LocationGoogle.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="LocationIPStack\LocationIPStack.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="LocationGoogle">
+        <MSBuild Projects="LocationGoogle\LocationGoogle.dproj"/>
+    </Target>
+    <Target Name="LocationGoogle:Clean">
+        <MSBuild Projects="LocationGoogle\LocationGoogle.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LocationGoogle:Make">
+        <MSBuild Projects="LocationGoogle\LocationGoogle.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LocationIPStack">
+        <MSBuild Projects="LocationIPStack\LocationIPStack.dproj"/>
+    </Target>
+    <Target Name="LocationIPStack:Clean">
+        <MSBuild Projects="LocationIPStack\LocationIPStack.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LocationIPStack:Make">
+        <MSBuild Projects="LocationIPStack\LocationIPStack.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="LocationGoogle;LocationIPStack"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="LocationGoogle:Clean;LocationIPStack:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="LocationGoogle:Make;LocationIPStack:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

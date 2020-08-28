@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C1A219E0-4803-456A-A6BB-8853312933CE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="BoundsEx\BoundsEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BoundsCircleEx\BoundsCircleEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BoundsRectangleEx\BoundsRectangleEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CalculateCoordinate\CalculateCoordinate.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MeasureDistance\MeasureDistance.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="BoundsEx">
+        <MSBuild Projects="BoundsEx\BoundsEx.dproj"/>
+    </Target>
+    <Target Name="BoundsEx:Clean">
+        <MSBuild Projects="BoundsEx\BoundsEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BoundsEx:Make">
+        <MSBuild Projects="BoundsEx\BoundsEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BoundsCircleEx">
+        <MSBuild Projects="BoundsCircleEx\BoundsCircleEx.dproj"/>
+    </Target>
+    <Target Name="BoundsCircleEx:Clean">
+        <MSBuild Projects="BoundsCircleEx\BoundsCircleEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BoundsCircleEx:Make">
+        <MSBuild Projects="BoundsCircleEx\BoundsCircleEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BoundsRectangleEx">
+        <MSBuild Projects="BoundsRectangleEx\BoundsRectangleEx.dproj"/>
+    </Target>
+    <Target Name="BoundsRectangleEx:Clean">
+        <MSBuild Projects="BoundsRectangleEx\BoundsRectangleEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BoundsRectangleEx:Make">
+        <MSBuild Projects="BoundsRectangleEx\BoundsRectangleEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CalculateCoordinate">
+        <MSBuild Projects="CalculateCoordinate\CalculateCoordinate.dproj"/>
+    </Target>
+    <Target Name="CalculateCoordinate:Clean">
+        <MSBuild Projects="CalculateCoordinate\CalculateCoordinate.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CalculateCoordinate:Make">
+        <MSBuild Projects="CalculateCoordinate\CalculateCoordinate.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MeasureDistance">
+        <MSBuild Projects="MeasureDistance\MeasureDistance.dproj"/>
+    </Target>
+    <Target Name="MeasureDistance:Clean">
+        <MSBuild Projects="MeasureDistance\MeasureDistance.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MeasureDistance:Make">
+        <MSBuild Projects="MeasureDistance\MeasureDistance.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="BoundsEx;BoundsCircleEx;BoundsRectangleEx;CalculateCoordinate;MeasureDistance"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="BoundsEx:Clean;BoundsCircleEx:Clean;BoundsRectangleEx:Clean;CalculateCoordinate:Clean;MeasureDistance:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="BoundsEx:Make;BoundsCircleEx:Make;BoundsRectangleEx:Make;CalculateCoordinate:Make;MeasureDistance:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

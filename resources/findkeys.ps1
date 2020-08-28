@@ -1,0 +1,1 @@
+Get-ChildItem -Path ..\ -Include *.dfm, *.pas, *.fmx -Recurse | select-string -pattern AIza

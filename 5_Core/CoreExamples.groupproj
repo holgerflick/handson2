@@ -1,0 +1,144 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CEBE73E0-3613-4A6F-848D-1A3E9BD22449}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Shell\ShellOperations.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Base64\Base64Ex.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JSON\JSONEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="URLEncode\URLEncodeEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DateTime\DateTimeEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MulDiv\MulDivEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MIME\MIMEEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Dialogs\DialogEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HexStr\HexStrEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TObject\TObjectEx.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ShellOperations">
+        <MSBuild Projects="Shell\ShellOperations.dproj"/>
+    </Target>
+    <Target Name="ShellOperations:Clean">
+        <MSBuild Projects="Shell\ShellOperations.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ShellOperations:Make">
+        <MSBuild Projects="Shell\ShellOperations.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Base64Ex">
+        <MSBuild Projects="Base64\Base64Ex.dproj"/>
+    </Target>
+    <Target Name="Base64Ex:Clean">
+        <MSBuild Projects="Base64\Base64Ex.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Base64Ex:Make">
+        <MSBuild Projects="Base64\Base64Ex.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JSONEx">
+        <MSBuild Projects="JSON\JSONEx.dproj"/>
+    </Target>
+    <Target Name="JSONEx:Clean">
+        <MSBuild Projects="JSON\JSONEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JSONEx:Make">
+        <MSBuild Projects="JSON\JSONEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="URLEncodeEx">
+        <MSBuild Projects="URLEncode\URLEncodeEx.dproj"/>
+    </Target>
+    <Target Name="URLEncodeEx:Clean">
+        <MSBuild Projects="URLEncode\URLEncodeEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="URLEncodeEx:Make">
+        <MSBuild Projects="URLEncode\URLEncodeEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DateTimeEx">
+        <MSBuild Projects="DateTime\DateTimeEx.dproj"/>
+    </Target>
+    <Target Name="DateTimeEx:Clean">
+        <MSBuild Projects="DateTime\DateTimeEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DateTimeEx:Make">
+        <MSBuild Projects="DateTime\DateTimeEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MulDivEx">
+        <MSBuild Projects="MulDiv\MulDivEx.dproj"/>
+    </Target>
+    <Target Name="MulDivEx:Clean">
+        <MSBuild Projects="MulDiv\MulDivEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MulDivEx:Make">
+        <MSBuild Projects="MulDiv\MulDivEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MIMEEx">
+        <MSBuild Projects="MIME\MIMEEx.dproj"/>
+    </Target>
+    <Target Name="MIMEEx:Clean">
+        <MSBuild Projects="MIME\MIMEEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MIMEEx:Make">
+        <MSBuild Projects="MIME\MIMEEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DialogEx">
+        <MSBuild Projects="Dialogs\DialogEx.dproj"/>
+    </Target>
+    <Target Name="DialogEx:Clean">
+        <MSBuild Projects="Dialogs\DialogEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DialogEx:Make">
+        <MSBuild Projects="Dialogs\DialogEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HexStrEx">
+        <MSBuild Projects="HexStr\HexStrEx.dproj"/>
+    </Target>
+    <Target Name="HexStrEx:Clean">
+        <MSBuild Projects="HexStr\HexStrEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HexStrEx:Make">
+        <MSBuild Projects="HexStr\HexStrEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TObjectEx">
+        <MSBuild Projects="TObject\TObjectEx.dproj"/>
+    </Target>
+    <Target Name="TObjectEx:Clean">
+        <MSBuild Projects="TObject\TObjectEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TObjectEx:Make">
+        <MSBuild Projects="TObject\TObjectEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ShellOperations;Base64Ex;JSONEx;URLEncodeEx;DateTimeEx;MulDivEx;MIMEEx;DialogEx;HexStrEx;TObjectEx"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ShellOperations:Clean;Base64Ex:Clean;JSONEx:Clean;URLEncodeEx:Clean;DateTimeEx:Clean;MulDivEx:Clean;MIMEEx:Clean;DialogEx:Clean;HexStrEx:Clean;TObjectEx:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ShellOperations:Make;Base64Ex:Make;JSONEx:Make;URLEncodeEx:Make;DateTimeEx:Make;MulDivEx:Make;MIMEEx:Make;DialogEx:Make;HexStrEx:Make;TObjectEx:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
